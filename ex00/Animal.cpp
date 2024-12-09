@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 12:17:36 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/12/09 12:34:26 by nlewicki         ###   ########.fr       */
+/*   Updated: 2024/12/09 14:45:24 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Animal::Animal()
 {
+	std::cout << "Animal designed" << std::endl;
 }
 
 Animal::Animal(const Animal & src)
@@ -23,6 +24,7 @@ Animal::Animal(const Animal & src)
 
 Animal::~Animal()
 {
+	std::cout << "Animal destroyed" << std::endl;
 }
 
 Animal & Animal::operator=(const Animal &rhs)
