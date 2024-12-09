@@ -6,41 +6,35 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 12:16:59 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/12/09 12:43:12 by nlewicki         ###   ########.fr       */
+/*   Updated: 2024/12/09 15:33:15 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Brain.hpp"
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const WrongAnimal* wrong = new WrongCat();
-	const WrongAnimal* wrongmeta = new WrongAnimal();
+	Dog* originalDog = new Dog();
+	originalDog->setIdea(0, "I want to play fetch");
+	originalDog->setIdea(1, "Treat time is the best");
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << wrong->getType() << " " << std::endl;
-	std::cout << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound(); //will output the dog sound!
-	wrong->makeSound(); //will output the wrong cat sound!
-	std::cout << std::endl;
+	std::cout << "Original dog's first idea: " << originalDog->getIdea(0) << std::endl;
 
-	meta->makeSound();
-	wrongmeta->makeSound(); //will output the wrong animal sound!
+	Dog* copiedDog = new Dog(*originalDog);
+	std::cout << "Copied dog's first idea: " << copiedDog->getIdea(0) << std::endl;
 
-	delete meta;
-	delete j;
-	delete i;
-	delete wrong;
-	delete wrongmeta;
+	// Modify original dog's idea
+	originalDog->setIdea(0, "I changed my mind");
+
+	// Verify deep copy
+	std::cout << "Original dog's first idea after change: " << originalDog->getIdea(0) << std::endl;
+	std::cout << "Copied dog's first idea (should remain unchanged): " << copiedDog->getIdea(0) << std::endl;
+
+	delete originalDog;
+	delete copiedDog;
 
 	return 0;
 }

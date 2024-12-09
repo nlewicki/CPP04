@@ -6,21 +6,20 @@
 #    By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/09 12:16:53 by nlewicki          #+#    #+#              #
-#    Updated: 2024/12/09 12:36:31 by nlewicki         ###   ########.fr        #
+#    Updated: 2024/12/09 15:28:17 by nlewicki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CPP = c++
 FLAGS = -Wall -Wextra -Werror -std=c++17
 
-NAME = Polymorphism
+NAME = fire
 
 SRCS = main.cpp \
 		Dog.cpp \
 		Cat.cpp \
 		Animal.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp
+		Brain.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

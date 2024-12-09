@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 12:17:16 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/12/09 15:33:28 by nlewicki         ###   ########.fr       */
+/*   Created: 2024/12/09 15:00:48 by nlewicki          #+#    #+#             */
+/*   Updated: 2024/12/09 15:02:25 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#include "Brain.hpp"
 
-# include "Animal.hpp"
-# include "Brain.hpp"
-
-class Cat : public Animal
+Brain::Brain()
 {
-	private:
-		Brain *_brain;
+	std::cout << "Brain designed" << std::endl;
+}
 
-	public:
-		Cat();
-		Cat(const Cat & src);
-		~Cat();
-		Cat &	operator=(const Cat &rhs);
+Brain::Brain(const Brain & src)
+{
+	*this = src;
+	std::cout << "Brain copied" << std::endl;
+}
 
-		std::string getIdea(int index) const;
-		void setIdea(int index, const std::string& idea);
-		void	makeSound() const;
-};
+Brain::~Brain()
+{
+	std::cout << "Brain destroyed" << std::endl;
+}
 
-#endif
+Brain & Brain::operator=(const Brain &rhs)
+{
+	if (this != &rhs)
+	{
+		for (int i = 0; i < 100; i++)
+			ideas[i] = rhs.ideas[i];
+	}
+	return *this;
+}
+
