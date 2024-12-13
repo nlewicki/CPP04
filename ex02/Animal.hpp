@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 12:17:42 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/12/10 14:12:50 by nlewicki         ###   ########.fr       */
+/*   Updated: 2024/12/13 12:47:07 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Animal
 		virtual ~Animal(); // virtual otherwise the destructor of the derived class will not be called
 		Animal &	operator=(const Animal &rhs);
 
-		virtual void	makeSound() const = 0; // virtual otherwise the method of the derived class will not be called
+		virtual void	makeSound() const = 0; // pure virtual function, the derived class must implement it
 		void			setType(std::string type);
 		std::string		getType() const;
 };
