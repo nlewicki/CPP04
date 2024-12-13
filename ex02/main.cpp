@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 12:16:59 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/12/13 12:46:13 by nlewicki         ###   ########.fr       */
+/*   Updated: 2024/12/13 12:45:42 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int main()
 	delete originalDog;
 	delete copiedDog;
 	// delete animal;
+
 	return 0;
 }
